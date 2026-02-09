@@ -188,7 +188,7 @@ int main(void)
 	switch(state) {
 	  case(VALENTINE):
 		ST7789_WriteString(30, 10, "Will you be", Font_16x26, RED, WHITE);
-		ST7789_WriteString(20, 40, "My Valentine?", Font_16x26, RED, WHITE);
+		ST7789_WriteString(20, 40, "my Valentine?", Font_16x26, RED, WHITE);
 		ST7789_WriteString(100, 70, "<3", Font_16x26, RED, WHITE);
 		ST7789_WriteString(10, 150, "YES<3    NO</3", Font_16x26, RED, WHITE);
 
@@ -257,13 +257,13 @@ int main(void)
 
 	  case(PLEASE_SAY_YES):
 		ST7789_WriteString(10, 10, "PLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLSPLS", Font_16x26, RED, WHITE);
-	  	ST7789_WriteString(20, 250, "YES!!    NO!!", Font_16x26, RED, WHITE);
+	  	ST7789_WriteString(20, 250, "YES!!   YES!!", Font_16x26, RED, WHITE);
 		if (HAL_GPIO_ReadPin(YBUTTON_PIN_GPIO_Port, YBUTTON_PIN_Pin) == 0) {
 			state = YES;
 			ST7789_Fill_Color(WHITEISH);
 			HAL_Delay(200);
 		} else if (HAL_GPIO_ReadPin(NBUTTON_PIN_GPIO_Port, NBUTTON_PIN_Pin) == 0) {
-			state = PLEASE_SAY_YES;
+			state = YES;
 			ST7789_Fill_Color(WHITEISH);
 			HAL_Delay(200);
 		}
